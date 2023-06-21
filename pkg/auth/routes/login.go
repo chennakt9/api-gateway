@@ -21,6 +21,8 @@ func Login(ctx *gin.Context, c pb.AuthServiceClient) {
 		return
 	}
 
+	// fmt.Println("login payload", b)
+
 	res, err := c.Login(context.Background(), &pb.LoginRequest{
 		Email: b.Email,
 		Password: b.Password,

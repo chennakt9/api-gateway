@@ -12,6 +12,8 @@ import (
 func FindOne(ctx *gin.Context, c pb.ProductServiceClient) {
 	id, err := strconv.ParseInt(ctx.Param("id"), 10, 64)
 
+	// fmt.Println(ctx)
+
 	if err != nil {
 		ctx.AbortWithError(http.StatusBadGateway, err)
 		return
