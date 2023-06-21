@@ -18,7 +18,7 @@ func InitAuthMiddleware(svc *ServiceClient) AuthMiddlewareConfig {
 	return AuthMiddlewareConfig{svc: svc}
 }
 
-func (c *AuthMiddlewareConfig) AuthMiddlewareConfig(ctx *gin.Context) {
+func (c *AuthMiddlewareConfig) AuthRequired(ctx *gin.Context) {
 	authorization := ctx.Request.Header.Get("authorization")
 
 	if authorization == "" {
